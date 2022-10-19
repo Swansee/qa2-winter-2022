@@ -9,7 +9,7 @@ package homework1;
 
 import org.junit.jupiter.api.Test;
 
-public class HomeWork {
+public class HomeWorkTest {
     @Test
     public void workingWithDelivery() {
         Delivery firstDelivery = new Delivery();
