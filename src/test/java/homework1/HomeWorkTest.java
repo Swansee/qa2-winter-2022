@@ -18,13 +18,14 @@ public class HomeWorkTest {
     @Test
     public void workingWithKeyboard () {
         Keyboard firstKeyboard = new Keyboard();
-    //    firstKeyboard.setBluetooth("Yes");
+    //    firstKeyboard.setBluetooth(Boolean.parseBoolean("Yes"));
         firstKeyboard.setColor("Black");
         firstKeyboard.setKeys(155);
 
         System.out.println("Logitech keyboard");
         System.out.println(firstKeyboard.getColor());
         System.out.println(firstKeyboard.getKeys());
+   //     System.out.println(firstKeyboard.isBluetooth());
     }
     @Test
     public void workingWithCountry() {
