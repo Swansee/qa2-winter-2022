@@ -20,11 +20,39 @@ public class HomeWorkTest {
         firstRoute.setRouteFinish("Milan");
         firstRoute.setDistance(980);
 
- //      System.out.println("Delivery out");
- //      System.out.println("1st delivery:");
+        Route secondRoute = new Route();
+        secondRoute.setRouteStart("London");
+        secondRoute.setRouteFinish("Paris");
+        secondRoute.setDistance(485);
+
+        Route thirdRoute = new Route();
+        thirdRoute.setRouteStart("Rome");
+        thirdRoute.setRouteFinish("Prague");
+        thirdRoute.setDistance(1299);
+
         System.out.println(firstRoute.getRouteStart());
         System.out.println(firstRoute.getRouteFinish());
         System.out.println(firstRoute.getDistance());
+    }
+        @Test
+    public void workingWithTransport() {
+        Transport firstTransport = new Transport();
+        firstTransport.setTransportType("Car");
+        firstTransport.setFuelConsumption(6.50);
+        firstTransport.setTankVolume(60);
+
+        Transport secondTransport = new Transport();
+        secondTransport.setTransportType("Train");
+        secondTransport.setFuelConsumption(210);
+        secondTransport.setTankVolume(7300);
+
+        Transport thirdTransport = new Transport();
+        thirdTransport.setTransportType("Plain");
+        thirdTransport.setFuelConsumption(662.00);
+        thirdTransport.setTankVolume(126000);
+
+        System.out.println(secondTransport.getTransportType());
+
     }
 
 }
