@@ -9,6 +9,7 @@ package homework2;
 - Вывести информацию о каждом маршруте и под каждым информацию по каждому типу транспорта: сколько топлива надо для прохождения маршрута и сможет ли проехать на одном баке
 */
 
+
 public class Route {
     private String routeStart;
     private String routeFinish;
