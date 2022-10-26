@@ -12,7 +12,7 @@ package homework2;
 public class Route {
     private String routeStart;
     private String routeFinish;
-    private int distance;
+    private double distance;
 
     public String getRouteStart() {
         return routeStart;
@@ -30,11 +30,11 @@ public class Route {
         this.routeFinish = routeFinish;
     }
 
-    public int getDistance() {
+    public double getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 }
