@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class HomeWorkTest {
 
     @Test
-    public void workingWithRoute() {
+    public void workingWithRouteAndTransport() {
         Route firstRoute = new Route();
         firstRoute.setRouteStart("Barcelona");
         firstRoute.setRouteFinish("Milan");
@@ -30,12 +30,6 @@ public class HomeWorkTest {
         thirdRoute.setRouteFinish("Prague");
         thirdRoute.setDistance(1299);
 
-        System.out.println(firstRoute.getRouteStart());
-        System.out.println(firstRoute.getRouteFinish());
-        System.out.println(firstRoute.getDistance());
-    }
-        @Test
-    public void workingWithTransport() {
         Transport firstTransport = new Transport();
         firstTransport.setTransportType("Car");
         firstTransport.setFuelConsumption(6.50);
@@ -52,6 +46,9 @@ public class HomeWorkTest {
         thirdTransport.setTankVolume(126000);
 
         System.out.println(secondTransport.getTransportType());
+        System.out.println(firstRoute.getRouteStart());
+        System.out.println(firstRoute.getRouteFinish());
+        System.out.println(firstRoute.getDistance());
 
     }
 
