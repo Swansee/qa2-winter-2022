@@ -48,9 +48,9 @@ public class HomeWorkTest {
 
         System.out.println(firstRoute.getRouteStart() + " - " + firstRoute.getRouteFinish() + ". Distance is: " + firstRoute.getDistance() + " km.");
         System.out.println(firstTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + firstTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",firstTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + firstTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", firstTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + firstRoute.getRouteStart() + " to " + firstRoute.getRouteFinish() + " by " + firstTransport.getTransportType() + ": " +
-                String.format("%.2f",firstRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", firstRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) + " l.");
         if ((firstRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) > firstTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + firstTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -58,9 +58,9 @@ public class HomeWorkTest {
         }
 
         System.out.println(secondTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + secondTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",secondTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + secondTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", secondTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + firstRoute.getRouteStart() + " to " + firstRoute.getRouteFinish() + " by " + secondTransport.getTransportType() + ": " +
-                String.format("%.2f",firstRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", firstRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) + " l.");
         if ((firstRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) > secondTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + secondTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -68,9 +68,9 @@ public class HomeWorkTest {
         }
 
         System.out.println(thirdTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + thirdTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",thirdTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + thirdTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", thirdTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + firstRoute.getRouteStart() + " to " + firstRoute.getRouteFinish() + " by " + thirdTransport.getTransportType() + ": " +
-                String.format("%.2f",firstRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", firstRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) + " l.");
         if ((firstRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) > thirdTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + thirdTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -81,9 +81,9 @@ public class HomeWorkTest {
 
         System.out.println(secondRoute.getRouteStart() + " - " + secondRoute.getRouteFinish() + ". Distance is: " + secondRoute.getDistance() + " km.");
         System.out.println(firstTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + firstTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",firstTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + firstTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", firstTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + secondRoute.getRouteStart() + " to " + secondRoute.getRouteFinish() + " by " + firstTransport.getTransportType() + ": " +
-                String.format("%.2f",secondRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", secondRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) + " l.");
         if ((secondRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) > firstTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + firstTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -91,9 +91,9 @@ public class HomeWorkTest {
         }
 
         System.out.println(secondTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + secondTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",secondTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + secondTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", secondTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + secondRoute.getRouteStart() + " to " + secondRoute.getRouteFinish() + " by " + secondTransport.getTransportType() + ": " +
-                String.format("%.2f",secondRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", secondRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) + " l.");
         if ((secondRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) > secondTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + secondTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -101,9 +101,9 @@ public class HomeWorkTest {
         }
 
         System.out.println(thirdTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + thirdTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",thirdTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + thirdTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", thirdTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + secondRoute.getRouteStart() + " to " + secondRoute.getRouteFinish() + " by " + thirdTransport.getTransportType() + ": " +
-                String.format("%.2f",secondRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", secondRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) + " l.");
         if ((secondRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) > thirdTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + thirdTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -114,9 +114,9 @@ public class HomeWorkTest {
 
         System.out.println(thirdRoute.getRouteStart() + " - " + thirdRoute.getRouteFinish() + ". Distance is: " + thirdRoute.getDistance() + " km.");
         System.out.println(firstTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + firstTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",firstTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + firstTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", firstTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + thirdRoute.getRouteStart() + " to " + thirdRoute.getRouteFinish() + " by " + firstTransport.getTransportType() + ": " +
-                String.format("%.2f",thirdRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", thirdRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) + " l.");
         if ((thirdRoute.getDistance() / 100 * firstTransport.getFuelConsumption()) > firstTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + firstTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -124,9 +124,9 @@ public class HomeWorkTest {
         }
 
         System.out.println(secondTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + secondTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",secondTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + secondTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", secondTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + thirdRoute.getRouteStart() + " to " + thirdRoute.getRouteFinish() + " by " + secondTransport.getTransportType() + ": " +
-                String.format("%.2f",thirdRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", thirdRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) + " l.");
         if ((thirdRoute.getDistance() / 100 * secondTransport.getFuelConsumption()) > secondTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be ENOUGH!!! " + secondTransport.getTransportType() + " will need a gas station.");
         } else {
@@ -134,9 +134,9 @@ public class HomeWorkTest {
         }
 
         System.out.println(thirdTransport.getTransportType() + ".");
-        System.out.println("With fuel tank " + thirdTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f",thirdTransport.getFuelConsumption()) + " l/100 km.");
+        System.out.println("With fuel tank " + thirdTransport.getTankVolume() + " l. and fuel consumption " + String.format("%.2f", thirdTransport.getFuelConsumption()) + " l/100 km.");
         System.out.println("Fuel to be used from " + thirdRoute.getRouteStart() + " to " + thirdRoute.getRouteFinish() + " by " + thirdTransport.getTransportType() + ": " +
-                String.format("%.2f",thirdRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) + " l.");
+                String.format("%.2f", thirdRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) + " l.");
         if ((thirdRoute.getDistance() / 100 * thirdTransport.getFuelConsumption()) > thirdTransport.getTankVolume()) {
             System.out.println("One tank of fuel will not be enough. " + thirdTransport.getTransportType() + " will need a gas station.");
         } else {

@@ -1,4 +1,5 @@
 package homework1;
+
 import org.junit.jupiter.api.Test;
 
 public class HomeWorkTest {
@@ -15,18 +16,20 @@ public class HomeWorkTest {
         System.out.println(firstDelivery.getCosts());
         System.out.println(firstDelivery.getCourier());
     }
+
     @Test
-    public void workingWithKeyboard () {
+    public void workingWithKeyboard() {
         Keyboard firstKeyboard = new Keyboard();
-    //    firstKeyboard.setBluetooth(Boolean.parseBoolean("Yes"));
+        //    firstKeyboard.setBluetooth(Boolean.parseBoolean("Yes"));
         firstKeyboard.setColor("Black");
         firstKeyboard.setKeys(155);
 
         System.out.println("Logitech keyboard");
         System.out.println(firstKeyboard.getColor());
         System.out.println(firstKeyboard.getKeys());
-   //     System.out.println(firstKeyboard.isBluetooth());
+        //     System.out.println(firstKeyboard.isBluetooth());
     }
+
     @Test
     public void workingWithCountry() {
         Country firstCountry = new Country();
@@ -44,6 +47,7 @@ public class HomeWorkTest {
         System.out.println(firstCountry.getCurrency());
         System.out.println(firstCountry.getCallingCode());
     }
+
     @Test
     public void workingWithCar() {
         Car firstCar = new Car();
@@ -61,6 +65,7 @@ public class HomeWorkTest {
         System.out.println(firstCar.getBatteryKwt());
         System.out.println(firstCar.getElectricRange());
     }
+
     @Test
     public void workingWithCoctails() {
         Coctail firstCoctail = new Coctail();
@@ -74,8 +79,9 @@ public class HomeWorkTest {
         System.out.println(firstCoctail.getSugarSyrup());
         System.out.println(firstCoctail.getSoda());
     }
+
     @Test
-    public void workingWithMovie(){
+    public void workingWithMovie() {
         Movie firstMovie = new Movie();
         firstMovie.setName("The Matrix");
         firstMovie.setDirector("The Wachowskis");
@@ -87,8 +93,9 @@ public class HomeWorkTest {
         System.out.println(firstMovie.getBudget());
         System.out.println(firstMovie.getLength());
     }
+
     @Test
-    public void workingWithOmelette(){
+    public void workingWithOmelette() {
         Omelette firstOmelette = new Omelette();
         firstOmelette.setEggs(2);
         firstOmelette.setMilk(0.20);
@@ -100,8 +107,9 @@ public class HomeWorkTest {
         System.out.println(firstOmelette.getSousages());
         System.out.println(firstOmelette.getTomatoes());
     }
+
     @Test
-    public void workingWithPayment(){
+    public void workingWithPayment() {
         Payment firstPayment = new Payment();
         firstPayment.setCurrency("EUR");
         firstPayment.setAccount("SWEDBANK");
@@ -111,8 +119,9 @@ public class HomeWorkTest {
         System.out.println(firstPayment.getAccount());
         System.out.println(firstPayment.getAmount());
     }
+
     @Test
-    public void workingWithRestourant(){
+    public void workingWithRestourant() {
         Restourant firstRestourant = new Restourant();
         firstRestourant.setCoffee(16.750);
         firstRestourant.setWhiskey(14.550);
@@ -122,8 +131,9 @@ public class HomeWorkTest {
         System.out.println(firstRestourant.getWhiskey());
         System.out.println(firstRestourant.getCola());
     }
+
     @Test
-    public void workingWithSong(){
+    public void workingWithSong() {
         Song firstSong = new Song();
         firstSong.setArtist("Depeche Mode");
         firstSong.setAlbum("Music for the Masses");
