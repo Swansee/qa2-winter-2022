@@ -34,7 +34,6 @@ public class PassengerInfoPage {
         baseFunc.type(BAG, bag);
         baseFunc.select(FLIGHT, flight);
         baseFunc.click(GET_PRICE_BTN);
- //       baseFunc.clickOnBookBtn(BOOK_BTN);
-
+        baseFunc.clickOnBookBtn(BOOK_BTN);
     }
 }

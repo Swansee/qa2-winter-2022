@@ -45,9 +45,10 @@ public class BaseFunc {
         input.sendKeys(text);
     }
     public void clickOnBookBtn(By locator) {
+        WebElement bookBtn = wait.until(ExpectedConditions.elementToBeClickable(locator));
 //        wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
-        browser.findElement(locator);
-        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        bookBtn.findElement(locator).click();
+//        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
 }
