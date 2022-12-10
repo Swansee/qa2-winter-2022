@@ -26,7 +26,6 @@ public class BaseFunc {
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
             url = "http://" + url;
         }
-
         browser.get(url);
     }
 
