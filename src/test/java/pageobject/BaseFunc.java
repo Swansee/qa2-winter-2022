@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
@@ -43,11 +44,11 @@ public class BaseFunc {
         input.clear();
         input.sendKeys(text);
     }
-    public void clickOnBookBtn(By locator) {
-        WebElement bookBtn = wait.until(ExpectedConditions.elementToBeClickable(locator));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
-        bookBtn.findElement(locator).click();
-//        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
-    }
+    public void clickOnBookBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
 
+    public void clickOnSeatBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
+
+    public void findElements(By locator) {
+        List<WebElement> webElements = browser.findElements(locator);
+    }
 }

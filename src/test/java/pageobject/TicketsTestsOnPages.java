@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import pageobject.pages.HomePage;
 import pageobject.pages.PassengerInfoPage;
+import pageobject.pages.SeatInfoPage;
 
 public class TicketsTestsOnPages {
     private final String URL = "http://www.qaguru.lv:8089/tickets/";
@@ -19,9 +20,8 @@ public class TicketsTestsOnPages {
     private final String BAG = "1";
     private final String FLIGHT = "13";
 
-    private final By BOOK_BTN = By.xpath("book2");
+    private final String SEAT = "10";
 
-    private final By BOOK_SEATS_BTN = By.id("book3");
 
         private BaseFunc baseFunc = new BaseFunc();
     @Test
@@ -33,6 +33,8 @@ public class TicketsTestsOnPages {
         PassengerInfoPage infoPage = new PassengerInfoPage(baseFunc);
         infoPage.typePassengerInfo(FIRST_NAME, LAST_NAME, DISCOUNT, ADULTS, CHILDREN, BAG, FLIGHT);
 
+        SeatInfoPage seatInfoPage = new SeatInfoPage(baseFunc);
+        seatInfoPage.chooseSeat(SEAT);
 
         //... переписать на пейджах
     }

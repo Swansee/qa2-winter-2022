@@ -17,7 +17,7 @@ public class PassengerInfoPage {
     private final By BAG = By.id("bugs");
     private final By FLIGHT = By.id("flight");
     private final By GET_PRICE_BTN = By.xpath(".//span [@onclick='setLang();']");
-    private final By BOOK_BTN = By.xpath("book2");
+    private final By BOOK_BTN = By.id("book2");
 
     private BaseFunc baseFunc;
 
@@ -36,4 +36,5 @@ public class PassengerInfoPage {
         baseFunc.click(GET_PRICE_BTN);
         baseFunc.clickOnBookBtn(BOOK_BTN);
     }
+ // apache command leng 3   between   is+пробел пробел+EUR.
 }

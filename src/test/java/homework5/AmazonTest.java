@@ -24,8 +24,8 @@ public class AmazonTest {
         baseFunc.openUrl(URL);
         HomePage homePage = new HomePage(baseFunc);
 
-        BestSellers bestSellers = new BestSellers(baseFunc);
-        bestSellers.click(locator);
+//        BestSellers bestSellers = new BestSellers(baseFunc);
+//        bestSellers.click(locator);
     }
 
 }
