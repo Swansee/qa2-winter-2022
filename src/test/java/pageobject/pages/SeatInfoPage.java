@@ -2,7 +2,6 @@ package pageobject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pageobject.BaseFunc;
 
 public class SeatInfoPage {
@@ -15,11 +14,11 @@ public class SeatInfoPage {
         this.baseFunc = baseFunc;
     }
 
-    public void chooseSeat(String seat) {
-        for (WebElement seats : baseFunc.findElements(CHOOSE_SEATS)) {
+    public void chooseSeat (String seat) {
+        for (WebElement seats : baseFunc.browser.findElements(CHOOSE_SEATS)) {
             if (seats.getText().equals(seat)) {
-                baseFunc.clickOnSeatBtn(seat);
-//                baseFunc.clickOnBookBtn(BOOK_BTN);
+                baseFunc.clickOnSeatBtn(CHOOSE_SEATS);
+                baseFunc.clickOnBookBtn(BOOK_BTN);
             }
         }
     }

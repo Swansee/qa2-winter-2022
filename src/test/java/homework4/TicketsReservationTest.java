@@ -1,6 +1,7 @@
 package homework4;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +33,8 @@ public class TicketsReservationTest {
 
     private final By BOOK_BTN = By.id("book2");
 
-    private final By CHOOSE_SEATS = By.xpath(".//div [contains(@onclick, 'seat')]");
+    //private final By CHOOSE_SEATS = By.xpath(".//div [contains(@onclick, 'seat')]");
+    private final By CHOOSE_SEATS = By.xpath(".//div [(@class = 'seat')]");
 
     private final By GET_PRICE_RESPONSES = By.xpath(".//div [@id = 'response']/span");
 
@@ -173,7 +175,10 @@ public class TicketsReservationTest {
                 break;
             }
         }
+        Assertions.assertEquals(CHOOSE_SEATS, seat, "Seats are not the same");
     }
+
+
 
 }
 

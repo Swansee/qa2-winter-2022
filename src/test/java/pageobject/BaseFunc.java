@@ -14,7 +14,7 @@ import java.util.List;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class BaseFunc {
-    private WebDriver browser;
+    public WebDriver browser;
     private WebDriverWait wait;
     public BaseFunc() {
         System.setProperty("webdriver.chrome.driver","c://System//QA//chromedriver.exe");
@@ -49,6 +49,6 @@ public class BaseFunc {
     public void clickOnSeatBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
 
     public void findElements(By locator) {
-        List<WebElement> webElements = browser.findElements(locator);
+        List<WebElement> listOfElements = browser.findElements(locator);
     }
 }
