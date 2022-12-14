@@ -44,12 +44,11 @@ public class TicketsTestsOnPages {
 //        infoPage.typePassengerInfo(FIRST_NAME, LAST_NAME, DISCOUNT, ADULTS, CHILDREN, BAG, FLIGHT);
         infoPage.typePassengerInfo(passenger);
 
-
+        Assertions.assertEquals(passenger.getFirstName(), infoPage.getPassengerName(), "First name not correct");
         Assertions.assertEquals(FROM_AIRPORT,infoPage.getFirstFromAirport(), "Airport from #1 not correct");
         Assertions.assertEquals(TO_AIRPORT,infoPage.getFirstToAirport(), "Airport to #1 not correct");
         Assertions.assertEquals(FROM_AIRPORT,infoPage.getSecondFromAirport(), "Airport from #2 not correct");
         Assertions.assertEquals(TO_AIRPORT,infoPage.getSecondToAirport(), "Airport to #2 not correct");
-        Assertions.assertEquals(passenger.getFirstName(), infoPage.getPassengerName(), "First name not correct");
 
         Assertions.assertTrue(infoPage.getPrice().length() > 0, "Error Message");
 
