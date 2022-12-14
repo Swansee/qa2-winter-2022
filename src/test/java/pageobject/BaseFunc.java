@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfElementsToBe;
 
 public class BaseFunc {
     public WebDriver browser;
@@ -35,6 +36,13 @@ public class BaseFunc {
         Select select = new Select(we);
         select.selectByValue(value);
     }
+
+    public void selectByText(By locator, String text) {
+        WebElement we = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        Select select = new Select(we);
+        select.selectByVisibleText(text);
+    }
+
     public void click(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
@@ -44,11 +52,26 @@ public class BaseFunc {
         input.clear();
         input.sendKeys(text);
     }
+    public void type(By locator, int text) {
+        type(locator, String.valueOf(text));
+    }
+
     public void clickOnBookBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
 
     public void clickOnSeatBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
 
-    public void findElements(By locator) {
-        List<WebElement> listOfElements = browser.findElements(locator);
+//    public void findElements(By locator) {
+//        List<WebElement> listOfElements = browser.findElements(locator);
+//    }
+    public List<WebElement> findElements(By locator) {
+        return browser.findElements(locator);
+    }
+
+    public WebElement findElement(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    public void waitForElementsCountToBe(By locator, int count){
+        wait.until(ExpectedConditions.numberOfElementsToBe(locator, count));
     }
 }

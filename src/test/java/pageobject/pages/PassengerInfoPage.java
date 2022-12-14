@@ -1,9 +1,11 @@
 package pageobject.pages;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobject.BaseFunc;
+import pageobject.model.Passenger;
 
 import java.time.Duration;
 
@@ -19,22 +21,60 @@ public class PassengerInfoPage {
     private final By GET_PRICE_BTN = By.xpath(".//span [@onclick='setLang();']");
     private final By BOOK_BTN = By.id("book2");
 
+    private final By RESERVATION_INFO = By.xpath(".//span [@class = 'bTxt']");
+    private final By RESPONSE_BLOCK = By.id("response");
+
     private BaseFunc baseFunc;
 
     public PassengerInfoPage(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
     }
 
-    public void typePassengerInfo (String firstname, String lastname, String discount, String adults, String children, String bag, String flight) {
-        baseFunc.type(FIRST_NAME, firstname);
-        baseFunc.type(LAST_NAME, lastname);
-        baseFunc.type(DISCOUNT, discount);
-        baseFunc.type(ADULTS, adults);
-        baseFunc.type(CHILDREN, children);
-        baseFunc.type(BAG, bag);
-        baseFunc.select(FLIGHT, flight);
+//    public void typePassengerInfo (String firstname, String lastname, String discount, String adults, String children, String bag, String flight) {
+//        baseFunc.type(FIRST_NAME, firstname);
+//        baseFunc.type(LAST_NAME, lastname);
+//        baseFunc.type(DISCOUNT, discount);
+//        baseFunc.type(ADULTS, adults);
+//        baseFunc.type(CHILDREN, children);
+//        baseFunc.type(BAG, bag);
+//        baseFunc.select(FLIGHT, flight);
+//        baseFunc.click(GET_PRICE_BTN);
+//        baseFunc.clickOnBookBtn(BOOK_BTN);
+//    }
+    public void typePassengerInfo (Passenger passenger) {
+        baseFunc.type(FIRST_NAME, passenger.getFirstName());
+        baseFunc.type(LAST_NAME, passenger.getLastName());
+        baseFunc.type(DISCOUNT, passenger.getDiscount());
+        baseFunc.type(ADULTS, passenger.getPeopleCount());
+        baseFunc.type(CHILDREN, passenger.getChildCount());
+        baseFunc.type(BAG, passenger.getBagCount());
+        baseFunc.selectByText(FLIGHT, passenger.getDate());
+
         baseFunc.click(GET_PRICE_BTN);
-        baseFunc.clickOnBookBtn(BOOK_BTN);
+        baseFunc.waitForElementsCountToBe(RESERVATION_INFO, 5);
+//        baseFunc.clickOnBookBtn(BOOK_BTN)
     }
- // apache command leng 3   between   is+пробел пробел+EUR.
+
+    public String getFirstFromAirport(){
+        return baseFunc.findElements(RESERVATION_INFO).get(0).getText();
+    }
+    public String getFirstToAirport(){
+        return baseFunc.findElements(RESERVATION_INFO).get(1).getText();
+    }
+    public String getSecondFromAirport(){
+        return baseFunc.findElements(RESERVATION_INFO).get(3).getText();
+    }
+    public String getSecondToAirport(){
+        return baseFunc.findElements(RESERVATION_INFO).get(4).getText();
+    }
+    public String getPassengerName(){
+        String name = baseFunc.findElements(RESERVATION_INFO).get(2).getText();
+        return name.substring(0, name.length() - 1);
+    }
+
+    public String getPrice(){
+        String text = baseFunc.findElement(RESPONSE_BLOCK).getText();
+        return StringUtils.substringBetween(text,"for ", " EUR");
+    }
+
 }
