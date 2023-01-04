@@ -18,10 +18,10 @@ public class PassengerInfoPage {
     private final By CHILDREN = By.id("children");
     private final By BAG = By.id("bugs");
     private final By FLIGHT = By.id("flight");
-    private final By GET_PRICE_BTN = By.xpath(".//span [@onclick='setLang();']");
+    private final By GET_PRICE_BTN = By.xpath(".//span[@onclick='setLang();']");
     private final By BOOK_BTN = By.id("book2");
 
-    private final By RESERVATION_INFO = By.xpath(".//span [@class = 'bTxt']");
+    private final By RESERVATION_INFO = By.xpath(".//span[@class = 'bTxt']");
     private final By RESPONSE_BLOCK = By.id("response");
 
     private BaseFunc baseFunc;
@@ -76,5 +76,10 @@ public class PassengerInfoPage {
         String text = baseFunc.findElement(RESPONSE_BLOCK).getText();
         return StringUtils.substringBetween(text,"for ", " EUR");
     }
+
+    public void book() {
+        baseFunc.click(BOOK_BTN);
+    }
+
 
 }

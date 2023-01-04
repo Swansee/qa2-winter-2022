@@ -47,6 +47,9 @@ public class BaseFunc {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
+    public void click(WebElement we) {
+        wait.until(ExpectedConditions.elementToBeClickable(we)).click();
+    }
     public void type(By locator, String text) {
         WebElement input = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         input.clear();
@@ -56,13 +59,10 @@ public class BaseFunc {
         type(locator, String.valueOf(text));
     }
 
-    public void clickOnBookBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
+//    public void clickOnBookBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
 
-    public void clickOnSeatBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
+//    public void clickOnSeatBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
 
-//    public void findElements(By locator) {
-//        List<WebElement> listOfElements = browser.findElements(locator);
-//    }
     public List<WebElement> findElements(By locator) {
         return browser.findElements(locator);
     }
@@ -73,5 +73,9 @@ public class BaseFunc {
 
     public void waitForElementsCountToBe(By locator, int count){
         wait.until(ExpectedConditions.numberOfElementsToBe(locator, count));
+    }
+
+    public void waitForMinimumElementsAmount(By locator, int minCount){
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, minCount));
     }
 }
