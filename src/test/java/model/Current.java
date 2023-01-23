@@ -2,6 +2,8 @@ package model;
 
 import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class Current {
     private long dt;
     private long sunrise;
@@ -22,4 +24,5 @@ public class Current {
     private int windDeg;
     @JsonProperty("wind_gust")
     private double windGust;
+    private List<Weather> weather;
 }

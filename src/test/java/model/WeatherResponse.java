@@ -16,10 +16,10 @@ public class WeatherResponse {
 
     private List<Minute> minutely;
 
-
+    private List<Hours> hourly;
 
     private List<Days> daily;
-    private List<Hours> hourly;
+
     private List<Alerts> alerts;
 
 }
