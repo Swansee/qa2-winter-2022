@@ -13,10 +13,10 @@ public class Days {
     @JsonProperty("moon_phase")
     private double moonPhase;
 
-    private List<Temp> temp;
+    private Temp temp;
 
     @JsonProperty("feels_like")
-    private List<FeelsLike> feelsLike;
+    private FeelsLike feelsLike;
     private int pressure;
     private int humidity;
     @JsonProperty("dew_point")
