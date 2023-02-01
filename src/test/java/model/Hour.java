@@ -4,10 +4,8 @@ import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class Current {
+public class Hour {
     private long dt;
-    private long sunrise;
-    private long sunset;
     private double temp;
     @JsonProperty("feels_like")
     private double feelsLike;
@@ -25,6 +23,7 @@ public class Current {
     @JsonProperty("wind_gust")
     private double windGust;
     private List<Weather> weather;
+    private double pop;
 
     public long getDt() {
         return dt;
@@ -32,22 +31,6 @@ public class Current {
 
     public void setDt(long dt) {
         this.dt = dt;
-    }
-
-    public long getSunrise() {
-        return sunrise;
-    }
-
-    public void setSunrise(long sunrise) {
-        this.sunrise = sunrise;
-    }
-
-    public long getSunset() {
-        return sunset;
-    }
-
-    public void setSunset(long sunset) {
-        this.sunset = sunset;
     }
 
     public double getTemp() {
@@ -144,5 +127,13 @@ public class Current {
 
     public void setWeather(List<Weather> weather) {
         this.weather = weather;
+    }
+
+    public double getPop() {
+        return pop;
+    }
+
+    public void setPop(double pop) {
+        this.pop = pop;
     }
 }

@@ -4,20 +4,23 @@ import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class Current {
+public class Day {
     private long dt;
     private long sunrise;
     private long sunset;
-    private double temp;
+    private long moonrise;
+    private long moonset;
+    @JsonProperty("moon_phase")
+    private double moonPhase;
+
+    private Temp temp;
+
     @JsonProperty("feels_like")
-    private double feelsLike;
+    private FeelsLike feelsLike;
     private int pressure;
     private int humidity;
     @JsonProperty("dew_point")
     private double dewPoint;
-    private double uvi;
-    private int clouds;
-    private int visibility;
     @JsonProperty("wind_speed")
     private double windSpeed;
     @JsonProperty("wind_deg")
@@ -25,6 +28,10 @@ public class Current {
     @JsonProperty("wind_gust")
     private double windGust;
     private List<Weather> weather;
+    private int clouds;
+    private double pop;
+    private double rain;
+    private double uvi;
 
     public long getDt() {
         return dt;
@@ -50,19 +57,43 @@ public class Current {
         this.sunset = sunset;
     }
 
-    public double getTemp() {
+    public long getMoonrise() {
+        return moonrise;
+    }
+
+    public void setMoonrise(long moonrise) {
+        this.moonrise = moonrise;
+    }
+
+    public long getMoonset() {
+        return moonset;
+    }
+
+    public void setMoonset(long moonset) {
+        this.moonset = moonset;
+    }
+
+    public double getMoonPhase() {
+        return moonPhase;
+    }
+
+    public void setMoonPhase(double moonPhase) {
+        this.moonPhase = moonPhase;
+    }
+
+    public Temp getTemp() {
         return temp;
     }
 
-    public void setTemp(double temp) {
+    public void setTemp(Temp temp) {
         this.temp = temp;
     }
 
-    public double getFeelsLike() {
+    public FeelsLike getFeelsLike() {
         return feelsLike;
     }
 
-    public void setFeelsLike(double feelsLike) {
+    public void setFeelsLike(FeelsLike feelsLike) {
         this.feelsLike = feelsLike;
     }
 
@@ -88,30 +119,6 @@ public class Current {
 
     public void setDewPoint(double dewPoint) {
         this.dewPoint = dewPoint;
-    }
-
-    public double getUvi() {
-        return uvi;
-    }
-
-    public void setUvi(double uvi) {
-        this.uvi = uvi;
-    }
-
-    public int getClouds() {
-        return clouds;
-    }
-
-    public void setClouds(int clouds) {
-        this.clouds = clouds;
-    }
-
-    public int getVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(int visibility) {
-        this.visibility = visibility;
     }
 
     public double getWindSpeed() {
@@ -144,5 +151,37 @@ public class Current {
 
     public void setWeather(List<Weather> weather) {
         this.weather = weather;
+    }
+
+    public int getClouds() {
+        return clouds;
+    }
+
+    public void setClouds(int clouds) {
+        this.clouds = clouds;
+    }
+
+    public double getPop() {
+        return pop;
+    }
+
+    public void setPop(double pop) {
+        this.pop = pop;
+    }
+
+    public double getRain() {
+        return rain;
+    }
+
+    public void setRain(double rain) {
+        this.rain = rain;
+    }
+
+    public double getUvi() {
+        return uvi;
+    }
+
+    public void setUvi(double uvi) {
+        this.uvi = uvi;
     }
 }
