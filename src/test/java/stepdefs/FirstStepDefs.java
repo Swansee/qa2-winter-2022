@@ -2,7 +2,8 @@ package stepdefs;
 
 import io.cucumber.java.en.When;
 
-public class FirstStepDefs {
+public class
+FirstStepDefs {
     @When("we are printring welcome text")
     public void print_welcome_text() {
         System.out.println("Hey-Hey! All works fine");
