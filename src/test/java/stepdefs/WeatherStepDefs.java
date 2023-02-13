@@ -4,6 +4,7 @@ import io.cucumber.core.internal.com.fasterxml.jackson.core.JsonProcessingExcept
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import model.Minute;
 import model.WeatherResponse;
 import org.junit.jupiter.api.Assertions;
 import requesters.WeatherRequester;
@@ -28,21 +29,60 @@ public class WeatherStepDefs {
 
     @Then("coordinates are:")
     public void check_coordinates(Map<String, Double> params){
-        Assertions.assertEquals(params.get("latitude"), response.getLat(), "Wrong lat");
-        Assertions.assertEquals(params.get("longitude"), response.getLon(), "Wrong lon");
+        Assertions.assertEquals(params.get("latitude"), response.getLat(), "Wrong latitude");
+        Assertions.assertEquals(params.get("longitude"), response.getLon(), "Wrong longitude");
     }
 
     @Then("timezone information is:")
-    public void check_timezones (Map<String, String> params){}
+    public void check_timezones (Map<String, String> params){
+        Assertions.assertEquals(params.get("timezone"), response.getTimezone(), "Wrong timezone");
+//        Assertions.assertEquals(params.get("offset"), response.getTimezoneOffset(), "Wrong timezone offset");
+    }
+//
+//    @Then("current weather data is:")
+//    public void check_current_weather (Map<String, String> params){
+//        Assertions.assertEquals(params.get("time"), response.getCurrent().getDt(), "Wrong time");
+//        Assertions.assertEquals(params.get("sunrise"), response.getCurrent().getSunrise(), "Wrong sunrise");
+//        Assertions.assertEquals(params.get("sunset"), response.getCurrent().getSunset(), "Wrong sunset");
+//        Assertions.assertEquals(params.get("temperature"), response.getCurrent().getTemp(), "Wrong temperature");
+//        Assertions.assertEquals(params.get("feels_like"), response.getCurrent().getFeelsLike(), "Wrong feels_like");
+//        Assertions.assertEquals(params.get("pressure"), response.getCurrent().getPressure(), "Wrong pressure");
+//        Assertions.assertEquals(params.get("humidity"), response.getCurrent().getHumidity(), "Wrong humidity");
+//        Assertions.assertEquals(params.get("dew_point"), response.getCurrent().getDewPoint(), "Wrong dew_point");
+//        Assertions.assertEquals(params.get("uvi"), response.getCurrent().getUvi(), "Wrong uvi");
+//        Assertions.assertEquals(params.get("clouds"), response.getCurrent().getClouds(), "Wrong clouds");
+//        Assertions.assertEquals(params.get("visibility"), response.getCurrent().getVisibility(), "Wrong visibility");
+//        Assertions.assertEquals(params.get("wind_speed"), response.getCurrent().getWindSpeed(), "Wrong wind_speed");
+//        Assertions.assertEquals(params.get("wind_deg"), response.getCurrent().getWindDeg(), "Wrong wind_deg");
+//        Assertions.assertEquals(params.get("wind_gust"), response.getCurrent().getWindGust(), "Wrong wind_gust");
+//    }
 
-    @Then("current weather data is:")
-    public void check_current_weather(Map<String, String> params){}
+    @Then("minutely weather data is:")
+    public void check_minutely_weather (Map<String, String> params){
+        Assertions.assertEquals(params.get("time"), response., "Wrong minutely weather time");
+        Assertions.assertEquals(params.get("precipitation"), response., "Wrong minutely weather precipitation");
+    }
 
-    @Then("alert Nr.{int} received:")
-    public void check_alert(int index, Map<String, String> params){}
+    @Then("hourly weather data is:")
+    public void check_hourly_weather (Map<String, String> params){
+        Assertions.assertEquals(params.get("time"), response.getHourly(), "Wrong time");
+    }
+
+    @Then("daily weather data is:")
+    public void check_daily_weather (Map<String, String> params){}
+
+
+//    @Then("alert Nr.{int} received:")
+//    public void check_alert (int index, Map<String, String> params){
+//        Assertions.assertEquals(params.get("sender"), response.getSenderName(), "Wrong alert sender name");
+//        Assertions.assertEquals(params.get("event"), response.getEvent(), "Wrong alert event");
+//        Assertions.assertEquals(params.get("start"), response.getStart(), "Wrong start alert data");
+//        Assertions.assertEquals(params.get("end"), response.getEnd(), "Wrong end alert data");
+//        Assertions.assertEquals(params.get("description"), response.getDescription(), "Wrong alert description");
+//    }
 
     @Then("tags for alert Nr.{int} received:")
-    public void check_tags(int index, List<String> tags){}
+    public void check_tags (int index, List<String> tags){}
 }
 
 /*
