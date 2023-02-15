@@ -31,7 +31,6 @@ public class WeatherStepDefs {
     public void check_coordinates(Map<String, Double> params){
         Assertions.assertEquals(params.get("latitude"), response.getLat(), "Wrong latitude");
         Assertions.assertEquals(params.get("longitude"), response.getLon(), "Wrong longitude");
-
     }
 
     @Then("timezone information is:")
