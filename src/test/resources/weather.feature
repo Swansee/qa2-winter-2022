@@ -92,16 +92,19 @@ Feature: Weather forecast
       | uvi         | 3.38       |
 
 
-#    And alert Nr.2 received:
-#      | sender      | NWS Philadelphia - Mount Holly (New Jersey, Delaware, Southeastern Pennsylvania)                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+    And alert Nr.2 received:
+#     | sender      | NWS Philadelphia - Mount Holly (New Jersey, Delaware, Southeastern Pennsylvania)                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | sender      | NWSPhiladelphia-MountHolly(NewJersey,Delaware,SoutheasternPennsylvania)   |
 #      | event       | Small Craft Advisory                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-#      | start       | 1646344800                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-#      | end         | 1646380800                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+      | event       | SmallCraftAdvisory                                                        |
+      | start       | 1646344800                                                                |
+      | end         | 1646380800                                                                |
 #      | description | ...SMALL CRAFT ADVISORY REMAINS IN EFFECT FROM 5 PM THIS\nAFTERNOON TO 3 AM EST FRIDAY...\n* WHAT...North winds 15 to 20 kt with gusts up to 25 kt and seas\n3 to 5 ft expected.\n* WHERE...Coastal waters from Little Egg Inlet to Great Egg\nInlet NJ out 20 nm, Coastal waters from Great Egg Inlet to\nCape May NJ out 20 nm and Coastal waters from Manasquan Inlet\nto Little Egg Inlet NJ out 20 nm.\n* WHEN...From 5 PM this afternoon to 3 AM EST Friday.\n* IMPACTS...Conditions will be hazardous to small craft. |
-#
-#    And tags for alert Nr.2 received:
-#      | Sunny  |
-#      | Clouds |
+      | description | ...SMALLCRAFTADVISORYREMAINSINEFFECTFROM5PMTHIS\nAFTERNOONTO3AMESTFRIDAY...\n*WHAT...Northwinds15to20ktwithgustsupto25ktandseas\n3to5ftexpected.\n*WHERE...CoastalwatersfromLittleEggInlettoGreatEgg\nInletNJout20nm,CoastalwatersfromGreatEggInletto\nCapeMayNJout20nmandCoastalwatersfromManasquanInlet\ntoLittleEggInletNJout20nm.\n*WHEN...From5PMthisafternoonto3AMESTFriday.\n*IMPACTS...Conditionswillbehazardoustosmallcraft.|
+
+    And tags for alert Nr.2 received:
+      | Sunny  |
+      | Clouds |
 
 #    Then latitude is 39.31
 #    And longitude is -74.5
