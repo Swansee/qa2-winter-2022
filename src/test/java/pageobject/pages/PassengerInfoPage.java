@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobject.BaseFunc;
+import pageobject.model.FlightInfo;
 import pageobject.model.Passenger;
 
 import java.time.Duration;
@@ -41,14 +42,14 @@ public class PassengerInfoPage {
 //        baseFunc.click(GET_PRICE_BTN);
 //        baseFunc.clickOnBookBtn(BOOK_BTN);
 //    }
-    public void typePassengerInfo (Passenger passenger) {
-        baseFunc.type(FIRST_NAME, passenger.getFirstName());
-        baseFunc.type(LAST_NAME, passenger.getLastName());
-        baseFunc.type(DISCOUNT, passenger.getDiscount());
-        baseFunc.type(ADULTS, passenger.getPeopleCount());
-        baseFunc.type(CHILDREN, passenger.getChildCount());
-        baseFunc.type(BAG, passenger.getBagCount());
-        baseFunc.selectByText(FLIGHT, passenger.getDate());
+    public void typePassengerInfo (FlightInfo info) {
+        baseFunc.type(FIRST_NAME, info.getPassenger().getFirstName());
+        baseFunc.type(LAST_NAME, info.getPassenger().getLastName());
+        baseFunc.type(DISCOUNT, info.getDiscount());
+        baseFunc.type(ADULTS, info.getAdultsCount());
+        baseFunc.type(CHILDREN, info.getChildCount());
+        baseFunc.type(BAG, info.getBagsCount());
+        baseFunc.selectByText(FLIGHT, info.getFlightDate());
 
         baseFunc.click(GET_PRICE_BTN);
         baseFunc.waitForElementsCountToBe(RESERVATION_INFO, 5);
