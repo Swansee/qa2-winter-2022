@@ -51,4 +51,9 @@ public class TicketsStepDefs {
         Assertions.assertEquals(flightInfo.getDestination(),passengerInfoPage.getFirstToAirport(), "Airport to #1 not correct");
     }
 
+    @When("we are filling in passenger registration form")
+    public void type_passenger_info () {
+        passengerInfoPage.typePassengerInfo();
+    }
+
 }

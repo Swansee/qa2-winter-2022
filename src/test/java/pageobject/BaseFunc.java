@@ -59,10 +59,6 @@ public class BaseFunc {
         type(locator, String.valueOf(text));
     }
 
-//    public void clickOnBookBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
-
-//    public void clickOnSeatBtn(By locator) { wait.until(ExpectedConditions.elementToBeClickable(locator)).click(); }
-
     public List<WebElement> findElements(By locator) {
         return browser.findElements(locator);
     }
