@@ -1,21 +1,27 @@
 package stepdefs;
 
+import io.cucumber.core.internal.com.fasterxml.jackson.core.JsonProcessingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import model.Reservation;
 import org.junit.jupiter.api.Assertions;
 import pageobject.BaseFunc;
 import pageobject.model.FlightInfo;
 import pageobject.model.Passenger;
 import pageobject.pages.HomePage;
 import pageobject.pages.PassengerInfoPage;
+import requesters.TicketsRequester;
 
+import java.util.List;
 import java.util.Map;
 
 public class TicketsStepDefs {
     private FlightInfo flightInfo; //null
     private HomePage homePage; //null
     private PassengerInfoPage passengerInfoPage; //null
+    private List<Reservation> reservations;
+    private Reservation reservationFromApi ; //null
     private BaseFunc baseFunc = new BaseFunc();
     private final String URL = "http://www.qaguru.lv:8089/tickets/";
 
@@ -34,26 +40,48 @@ public class TicketsStepDefs {
     }
 
     @Given("home page opened")
-    public void open_home_page(){
+    public void open_home_page() {
         baseFunc.openUrl(URL);
         homePage = new HomePage(baseFunc);
     }
 
     @When("we are selecting airports")
-    public void select_airports(){
+    public void select_airports() {
         homePage.selectAirports(flightInfo.getDeparture(), flightInfo.getDestination());
         passengerInfoPage = new PassengerInfoPage(baseFunc);
     }
 
     @Then("selected airports appears on the next page")
-    public void check_airports(){
-        Assertions.assertEquals(flightInfo.getDeparture(),passengerInfoPage.getFirstFromAirport(), "Airport from #1 not correct");
-        Assertions.assertEquals(flightInfo.getDestination(),passengerInfoPage.getFirstToAirport(), "Airport to #1 not correct");
+    public void check_airports() {
+        Assertions.assertEquals(flightInfo.getDeparture(), passengerInfoPage.getFirstFromAirport(), "Airport from #1 not correct");
+        Assertions.assertEquals(flightInfo.getDestination(), passengerInfoPage.getFirstToAirport(), "Airport to #1 not correct");
     }
 
     @When("we are filling in passenger registration form")
-    public void type_passenger_info () {
-        passengerInfoPage.typePassengerInfo();
+    public void fill_in_passenger_info() {
+        passengerInfoPage.typePassengerInfo(flightInfo);
+    }
+
+    @When("we are requesting reservations data")
+    public void request_reservations() throws JsonProcessingException {
+        TicketsRequester requester = new TicketsRequester();
+        reservations = requester.getReservations();
+    }
+
+    @Then("current reservation is in the list")
+    public void find_reservation(){
+        for (Reservation r : reservations) {
+            if (r.getName().equals(flightInfo.getPassenger().getFirstName())){
+                reservationFromApi = r;
+                break;
+            }
+        }
+        Assertions.assertNotNull(reservationFromApi, "Reservation isn't found");
+    }
+
+    @Then("all reservation data is correct")
+    public void check_reservation_data(){
+//reservationFromApi is used here for assertions
     }
 
 }
