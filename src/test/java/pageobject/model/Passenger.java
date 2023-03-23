@@ -7,12 +7,6 @@ public class Passenger {
     private String lastName;
 
     public Passenger(String firstName, String lastName) {
-//        if (firstName.equals("random")) {
-//            this.firstName = RandomStringUtils.randomAlphabetic(10);
-//        }
-//        else {
-//            this.firstName = firstName;
-//        }
 
         this.firstName = firstName.equals("random") ? RandomStringUtils.randomAlphabetic(10) : firstName;
 

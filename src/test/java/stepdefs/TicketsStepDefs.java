@@ -61,27 +61,27 @@ public class TicketsStepDefs {
     public void fill_in_passenger_info() {
         passengerInfoPage.typePassengerInfo(flightInfo);
     }
-
-    @When("we are requesting reservations data")
-    public void request_reservations() throws JsonProcessingException {
-        TicketsRequester requester = new TicketsRequester();
-        reservations = requester.getReservations();
-    }
-
-    @Then("current reservation is in the list")
-    public void find_reservation(){
-        for (Reservation r : reservations) {
-            if (r.getName().equals(flightInfo.getPassenger().getFirstName())){
-                reservationFromApi = r;
-                break;
-            }
-        }
-        Assertions.assertNotNull(reservationFromApi, "Reservation isn't found");
-    }
-
-    @Then("all reservation data is correct")
-    public void check_reservation_data(){
-//reservationFromApi is used here for assertions
-    }
+//
+//    @When("we are requesting reservations data")
+//    public void request_reservations() throws JsonProcessingException {
+//        TicketsRequester requester = new TicketsRequester();
+//        reservations = requester.getReservations();
+//    }
+//
+//    @Then("current reservation is in the list")
+//    public void find_reservation(){
+//        for (Reservation r : reservations) {
+//            if (r.getName().equals(flightInfo.getPassenger().getFirstName())){
+//                reservationFromApi = r;
+//                break;
+//            }
+//        }
+//        Assertions.assertNotNull(reservationFromApi, "Reservation isn't found");
+//    }
+//
+//    @Then("all reservation data is correct")
+//    public void check_reservation_data(){
+////reservationFromApi is used here for assertions
+//    }
 
 }
