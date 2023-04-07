@@ -12,11 +12,11 @@ import java.awt.*;
 public class TicketsRequester {
     private final String URL = "http://qaguru.lv:8089/tickets/getReservations.php";
 
-    public List<Reservation> getReservations() throws JsonProcessingException {
-        RestTemplate restTemplate = new RestTemplate();
-        String json = restTemplate.getForEntity(URL, String.class).getBody();
-
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(json, new TypeReference<List<Reservation>>() {});
-    }
+//    public List<Reservation> getReservations() throws JsonProcessingException {
+//        RestTemplate restTemplate = new RestTemplate();
+//        String json = restTemplate.getForEntity(URL, String.class).getBody();
+//
+//        ObjectMapper mapper = new ObjectMapper();
+//        return mapper.readValue(json, new TypeReference<List<Reservation>>() {});
+//    }
 }

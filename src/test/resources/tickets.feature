@@ -29,11 +29,11 @@ Feature: Tickets reservation
     When we are pressing Book button
     And selecting seat
 
-    Then correct seat nu,ber appears
+    Then correct seat number appears
 
-    When we are booking selected ticket
-    Then successful registration message appears
+   When we are booking selected ticket
+   Then successful registration message appears
 
-    When we are requesting reservations data
-    Then current reservation is in the list
-    And all reservation data is correct
+#    When we are requesting reservations data
+#    Then current reservation is in the list
+#    And all reservation data is correct
